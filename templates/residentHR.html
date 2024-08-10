@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}The Hospital-Residents Problem{% endblock %}
+{% block content %}
+    <form method="post">
+        <h4 style="font-size:2vw">The Hospital-Residents Problem</h4>
+        <h4 style="font-size:1.5vw">Solved using a resident-oriented extension of the Gale-Shapley algorithm</h4>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="hos">Number of hospitals:</label>
+                <input type="number" class="form-control" name="hos" id="hos" value="{{ request.form['hos'] }}"
+                       required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="res">Number of residents:</label>
+                <input type="number" class="form-control" name="res" id="res" value="{{ request.form['res'] }}"
+                       required>
+            </div>
+        </div>
+
+        <div style="display: block" class="form-group">
+            <label for="cap">Hospital capacities:</label>
+            <input type="text" class="form-control" name="cap" id="cap" value="{{ request.form['cap'] }}" required>
+        </div>
+        <div style="display: block" class="form-group">
+            <label for="hPreferences">Hospitals' preferences:</label>
+            <input type="text" class="form-control" name="hPreferences" id="hPreferences"
+                   value="{{ request.form['hPreferences'] }}"
+                   placeholder="Place comma between two hospitals' preferences">
+        </div>
+        <div style="display: block" class="form-group">
+            <label for="rPreferences">Residents' preferences:</label>
+            <input type="text" class="form-control" name="rPreferences" id="rPreferences"
+                   value="{{ request.form['rPreferences'] }}"
+                   placeholder="Place comma between two residents' preferences">
+        </div>
+
+        <div class="text-right">
+            <button type="submit" class="btn btn-primary" name="submit"> Submit</button>
+            <button type="reset" class="btn btn-secondary" name="reset"> Reset</button>
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}Stable Matching with Incomplete Lists{% endblock %}
+{% block content %}
+    <form method="post">
+        <h4 style="font-size:2vw">The Stable Matching Problem with Incomplete Lists</h4>
+        <h4 style="font-size:1.5vw">Solved using an extension of the Gale-Shapley algorithm</h4>
+        <div style="display: block" class="form-row">
+            <div class="form-group col-md-4">
+                <label for="num">Number of leaders and followers:</label>
+                <input type="number" class="form-control" name="num" id="num" value="{{ request.form['num'] }}" required
+                       placeholder="If unequal, enter whichever number is higher">
+            </div>
+        </div>
+
+        <div style="display: block" class="form-check form-check-inline">
+            <label>Who should propose?</label>
+            <input type="radio" class="form-check-input" name="propose" id="leaders" value="Leaders">
+            <label for="leaders">Leaders</label>
+            <input type="radio" class="form-check-input" name="propose" id="followers" value="Followers">
+            <label for="followers">Followers</label>
+        </div>
+
+        <div style="display: block" class="form-group">
+            <label for="lPreferences">Leaders' preferences:</label>
+            <input type="text" class="form-control" name="lPreferences" id="lPreferences"
+                   value="{{ request.form['lPreferences'] }}"
+                   placeholder="Place comma between two leaders' preferences">
+        </div>
+        <div style="display: block" class="form-group">
+            <label for="fPreferences">Followers' preferences:</label>
+            <input type="text" class="form-control" name="fPreferences" id="fPreferences"
+                   value="{{ request.form['fPreferences'] }}"
+                   placeholder="Place comma between two followers' preferences">
+        </div>
+
+        <div class="text-right">
+            <button type="submit" class="btn btn-primary" name="submit"> Submit</button>
+            <button type="reset" class="btn btn-secondary" name="reset"> Reset</button>
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}The Stable Roommates Problem{% endblock %}
+{% block content %}
+    <form method="post">
+        <h4 style="font-size:2vw">The Stable Roommates Problem</h4>
+        <h4 style="font-size:1.5vw">Solved using Irving's algorithm</h4>
+        <div style="display: block" class="form-row">
+            <div class="form-group col-md-4">
+                <label for="num">Number of people:</label>
+                <input type="number" class="form-control" name="num" id="num" value="{{ request.form['num'] }}"
+                       required>
+            </div>
+        </div>
+
+        <div style="display: block" class="form-group">
+            <label for="preferences">Preferences:</label>
+            <input type="text" class="form-control" name="preferences" id="preferences"
+                   value="{{ request.form['preferences'] }}" placeholder="Place comma between two agents' preferences">
+        </div>
+
+        <div class="text-right">
+            <button type="submit" class="btn btn-primary" name="submit"> Submit</button>
+            <button type="reset" class="btn btn-secondary" name="reset"> Reset</button>
+        </div>
+    </form>
+{% endblock %}
