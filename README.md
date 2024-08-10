@@ -1,0 +1,5 @@
+The Stable Matching problem involves forming pairs between two disjoint sets of people, taking into account each person’s preferences over the other side. For a matching to be considered stable, there must not be any two people such that they would prefer to be paired together over being with their current partners. This problem has diverse and uncountable applications, with life-saving implications, for example, when it comes to matching donor kidneys with possible recipients.
+
+This project involves implementing well-known algorithms for solving the Stable Matching problem and several other popular variants of the problem. In addition, the algorithms have been optimised to run more efficiently. The project is a web application that can be used by educators or students to quickly compute stable matchings of various types and also to learn more about how each algorithm works step-by-step.
+
+This project uses Python to implement the algorithms. The webapp uses Flask, Javascript and Bootstrap.
